@@ -8,16 +8,13 @@ public class Railroads {
     }
     public static void main (String[] args)
     {
-        Railroads r = new Railroads(6);
-        String perm = "5 4 1 2 3";
+        Railroads r = new Railroads(5);
+        String perm = "1 2 3 4 5";
         int[] arr =  Arrays.stream(perm.split(" ")).mapToInt(Integer::parseInt).toArray();
         Stack<Integer> stack = new Stack<>();
-        stack.push(1);
-        stack.push(2);
-        stack.push(3);
-        stack.push(4);
-        stack.push(5);
-        stack.push(6);
+        for (int i = arr.length-1; i>=0; i--) {
+            stack.push(arr[i]);
+        }
         System.out.println(r.isValid(stack));
     }
 
